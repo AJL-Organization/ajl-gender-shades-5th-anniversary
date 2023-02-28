@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script defer data-domain=“gs.ajl.org” src=“https://plausible.io/js/script.js”></script>
+    <script>
+      window.plausible =
+        window.plausible ||
+        function () {
+          (window.plausible.q = window.plausible.q || []).push(arguments);
+        };
+    </script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <script src="
+https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/js/bulma-extensions.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/bulma-extensions@6.2.7/dist/css/bulma-extensions.min.css
+" rel="stylesheet">
+<link href="
+https://cdn.jsdelivr.net/npm/@creativebulma/bulma-tooltip@1.2.0/dist/bulma-tooltip.min.css
+" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Karla"
+      rel="stylesheet"
+    />
+    <link
+      href="styles.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/1.3.3/webcomponents-lite.js"></script>
+    <script src="main.js"></script>
+    <title>Gender Shades</title>
+  </head>
+
+  <body>
+    <nav
+      class="navbar is-uppercase Oswald"
+      role="navigation"
+      aria-label="main navigation"
+    >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/ajl-facet-dive-poc">
+          <img
+            src="ajl_logo.png"
+          />
+        </a>
+
+        <a class="red-nav-header navbar-item" href="/ajl-facet-dive-poc">
+          Gender Shades <sup>5th Anniversary</sup>
+        </a>
+
+        <a
+          role="button"
+          class="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarBasicExample"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-end">
+          <a href="#visualization" class="red-nav-header navbar-item"> Visualization </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="red-nav-header navbar-link is-arrowless"> References </a>
+
+            <div class="navbar-dropdown">
+              <a
+                href="http://gendershades.org/index.html"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Original Gender Shades Website
+              </a>
+              <a
+                href="https://poetofcode.com/research/"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Poet of Code Research
+              </a>
+              <a
+                href="https://dspace.mit.edu/handle/1721.1/114068"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                MIT Master’s Thesis 2017
+              </a>
+              <a
+                href="https://proceedings.mlr.press/v81/buolamwini18a/buolamwini18a.pdf"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Gender Shades Paper 2018
+              </a>
+              <a
+                href="https://dl.acm.org/doi/10.1145/3306618.3314244"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Actionable Auditing Paper 2019</a
+              >
+              <a
+                href="https://dl.acm.org/doi/10.1145/3571151"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Actionable Auditing Revisited 2022
+              </a>
+              <a
+                href="https://dspace.mit.edu/handle/1721.1/143396"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                MIT PhD Disseration 2022
+              </a>
+              <a
+                href="https://www.nist.gov/news-events/news/2019/12/nist-study-evaluates-effects-race-age-sex-face-recognition-software"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                NIST Demographics Report
+              </a>
+              <a
+                href="http://gendershades.org/bpscorecard.html"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Black Panther Scorecard
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="red-nav-header navbar-link is-arrowless"> Notable Coverage </a>
+
+            <div class="navbar-dropdown">
+              <a
+                href="https://www.nytimes.com/2018/02/09/technology/facial-recognition-race-artificial-intelligence.html"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                New York Times on Gender Shades Paper
+              </a>
+              <a
+                href="https://www.nytimes.com/2019/01/24/technology/amazon-facial-technology-study.html"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                New York Times on Actionable Auditing Paper 
+              </a>
+              <a
+                href="https://www.nature.com/articles/d41586-022-03050-7"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Nature
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="red-nav-header navbar-link is-arrowless"> Awards </a>
+
+            <div class="navbar-dropdown">
+              <a
+                href="https://www.eff.org/awards/pioneer/2020"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                EFF Pioneer Award
+              </a>
+              <a
+                href="https://www.bloomberg.com/features/2018-bloomberg-50/#the-ai-investigators"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+                Bloomberg 50 
+              </a>
+            </div>
+          </div>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="red-nav-header navbar-link is-arrowless"> Testimonies </a>
+
+            <div class="navbar-dropdown is-right">
+              <a
+                href="https://www.congress.gov/event/116th-congress/house-event/109521"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+              2019 Congressional Testimony
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=qOEtQYGwZ8w"
+                target="_blank"
+                class="red-nav-header navbar-item"
+              >
+              2021 Robert Williams Testimony 
+              </a>
+            </div>
+          </div>
+          <a data-tooltip="Coming Soon" class="red-nav-header-disabled navbar-item has-tooltip-bottom">
+            GS5 API Results Dataset
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero is-medium is-black">
+      <div class="hero-body">
+        <div class="columns">
+          <div class="column">
+            <h1 class="title Oswald is-uppercase block">
+              Celebrating 5 Years of Gender Shades
+            </h1>
+            <p class="subtitle is-6 Karla block">
+              “When I started this work as a graduate student, I could not have
+              imagined this level of impact. I am grateful to all of the
+              collaborators that made Gender Shades possible. The Algorithmic
+              Justice League will continue fighting for the excoded, those
+              negatively impacted by AI.”
+            </p>
+            <p class="block Karla subtitle is-6">- Dr. Buolamwini</p>
+          </div>
+          <div class="column">
+            <div class="columns is-mobile">
+              <div class="column">
+                <img
+                  class="algorithm-image"
+                  src="DarkerFemaleVector.svg"
+                  alt="Average face of a darker females in PPB"
+                />
+              </div>
+              <div class="column">
+                <img
+                  class="algorithm-image"
+                  src="DarkerMaleVector.svg"
+                  alt="Average face of a darker male in PPB"
+                />
+              </div>
+              <div class="column">
+                <img
+                  class="algorithm-image"
+                  src="LighterFemaleVector.svg"
+                  alt="Average face of a lighter female in PPB"
+                />
+              </div>
+              <div class="column">
+                <img
+                  class="algorithm-image"
+                  src="LighterMaleVector.svg"
+                  alt="Average face of a lighter male in PPB"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h1 class="title Oswald is-uppercase is-1 has-text-centered">ONGOING IMPACT</h1>
+      <div class="columns">
+        <div class="column">
+          <p class="Karla block">
+            The Gender Shades Project began in 2016 as the focus of Dr. Buolamwini’s
+            <a
+              class="general-link"
+              target="_blank"
+              href="https://dspace.mit.edu/handle/1721.1/114068"
+              >MIT master’s thesis</a
+            >
+            inspired by
+            <a
+              class="general-link"
+              href="https://www.ted.com/talks/joy_buolamwini_how_i_m_fighting_bias_in_algorithms"
+              target="_blank"
+              >her struggles with face detection systems</a
+            >. In 2018, she and Dr. Timnit Gebru subsequently published the widely
+            known Gender Shades paper. This research used the computer vision task
+            of gender classification (guessing the gender of an individual from a
+            headshot image) to powerfully demonstrate algorithmic bias from IBM
+            Microsoft, and Face++.
+            <a
+              class="general-link"
+              target="_blank"
+              href="https://dl.acm.org/doi/10.1145/3571151"
+              >Subsequently, the Actionable Auditing research</a
+            >
+            conducted by Dr. Buolamwini Deborah Raji demonstrated similar
+            disparities with Amazon. With more than 3400 citations, the Gender
+            Shades paper has shaped
+            <a
+              class="general-link"
+              href="https://www.nature.com/articles/d41586-022-03050-7"
+              target="_blank"
+              >industry practice, policy agendas, and academic research around
+              facial recognition technologies, algorithmic auditing, and AI harms</a
+            >. The implications of the paper have also been used in advocacy
+            campaigns and litigation focused on resisting harmful use of facial
+            recognition technologies. The research is also heavily featured in the
+            Emmy-nominated documentary
+            <a
+              class="general-link"
+              href="https://www.netflix.com/title/81328723"
+              target="_blank"
+              >Coded Bias available on Netfilx</a
+            >.
+          </p>
+          <img alt="Timnit Gebru and Joy Buolamwini stand together against a plain backdrop, holding Algorithmic Justice League shields and smiling." class="shield-content-image" src="JoyTimnitAJLShields.jpg"/>
+        </div>
+        <div class="column">
+          <img class="block" alt="Split screen from a video conference software featuring four individuals: Joy Buolomwini, Timnit Gebru, Cindy Cohn, and Deb Raji." src="pioneer_award_ceremony.jpeg"/>
+          <p class="Karla block">
+            The major tech companies evaluated during the duration of the project
+            all made commitments to varying degrees to stop selling facial
+            recognition technologies to police in the wake of the murder of George
+            Floyd and
+            <a
+              class="general-link"
+              href="https://www.npr.org/2020/06/09/873298837/ibm-abandons-facial-recognition-products-condemns-racially-biased-surveillance"
+              target="_blank"
+              >growing opposition to biometric surveillance</a
+            >. Notably, IBM no longer produces facial recognition or analysis
+            software.
+            <a
+              class="general-link"
+              href="https://azure.microsoft.com/en-us/blog/responsible-ai-investments-and-safeguards-for-facial-recognition/"
+              target="_blank"
+              >Microsoft announced that they will retire face-based gender
+              classification in 2023</a
+            >, “we have opted to not support a general-purpose system in the Face
+            API that purports to infer emotional states, gender, age, smile, facial
+            hair, hair, and makeup.”
+          </p>
+          <p class="Karla block">
+            As part of the 5th Anniversary Celebration, the Algorithmic Justice
+            League is releasing a commemorative visualization and will be making available
+            for the first time the original API responses. We have also selected
+            <a
+              class="general-link"
+              href="https://www.ajl.org/gender-shades-justice-award"
+              target="_blank"
+              >Robert Williams the first Gender Shades Justice Award recipient</a
+            >. He was wrongfully arrested in front of his family after a facial
+            recognition system misidentified him. He has courageously spoken out
+            about his experiences. As researchers and practitioners explore pathways
+            to equitable and accountable AI, let us keep in mind that we can create
+            a world where data is not destiny and your hue is not a cue to dismiss
+            your humanity.
+          </p>
+        </div>
+      </div>
+      
+      
+    </section>
+
+    <section class="has-text-centered section">
+      <h1 id="visualization" class="title is-1 Oswald is-uppercase">
+        Explore the Results
+      </h1>
+      <div class="notification Karla">
+        The Gender Shades Project evaluated the accuracy of AI powered gender
+        classification products.
+      </div>
+      <facets-dive
+        id="facets-visualization"
+        fitGridAspectRatioToViewport="true"
+        sprite-image-width="100" 
+        sprite-image-height="100"
+        class="visualization"></facets-dive>
+        <div class="block">
+          Be the first to know when the dataset is available
+        </div>
+        <div class="block">
+        <a href="http://ajl.org/#join" target="_blank" class="black-button button Oswald is-uppercase">Sign up for the AJL newsletter</a>
+        </div>
+    </section>
+
+    <section class="section has-text-left">
+      <h1 class="title Oswald is-uppercase">Dataset Privacy</h1>
+      <p class="Karla block">
+        The original Pilot Parliaments Benchmark included publicly available images of parliamentarians from six countries. Many of these face images are now protected under GDPR, so we will no longer be providing the original Pilot Parliaments Benchmark. For the fifth year anniversary, we are releasing a new dataset GS5-API-Results that contains the original API results used in the 2018 paper. We hope this dataset will enable retrospective research while maintaining our commitment to equitable and accountable AI.
+      </p>
+      <h1 class="title Oswald is-uppercase">Your Privacy</h1>
+      <p class="Karla block">
+        We use the open source <a class="general-link" href="https://plausible.io/" target="_blank">plausible.io</a> analytics system to track activity
+        on this website, including page views and data downloads. We do not
+        store Cookies, IP addresses, or any other personal data. All analytics
+        data is stored in aggregate only.
+      </p>
+    </section>
+    
+
+    <footer class="footer">
+      <div class="columns">
+        <div class="column">
+          <p class="Oswald is-uppercase">Team</p>
+          <p class="Karla">
+            <span class="footer-darker-text">Joy Buolamwini</span>, Lead Author
+          </p>
+          <p class="Karla">
+            <span class="footer-darker-text">Timnit Gebru</span>, PhD, Co-Author
+          </p>
+          <p class="Karla">
+            <span class="footer-darker-text">Dr. Helen Raynham</span>, Clinical
+            Expert
+          </p>
+          <p class="Karla">
+            <span class="footer-darker-text">Deborah Raji</span>, Data Opps
+          </p>
+          <p class="Karla">
+            <span class="footer-darker-text">Ethan Zuckerman</span>, Advisor
+          </p>
+        </div>
+        <div class="column is-one-fifth">
+          <p class="Oswald is-uppercase">Dataset</p>
+          <p class="Karla">
+            Be the first to know when the dataset is available.
+          </p>
+          <br/>
+          <button class="button red-button Oswald is-uppercase is-multiline">Sign up for the AJL newsletter</button>
+        </div>
+        <div class="column">
+          <p class="Oswald is-uppercase">Algorithmic Justice League Project</p>
+          <div class="columns">
+            <div class="column">
+              <p class="Karla">
+                <a
+                  class="footer-link"
+                  href="https://www.ajl.org/"
+                  target="_blank"
+                  >Website</a
+                >
+              </p>
+            </div>
+            <div class="column">
+              <p class="Karla">
+                <a
+                  class="footer-link"
+                  href="https://www.facebook.com/AJLUnited/"
+                  target="_blank"
+                  >Facebook</a
+                >
+              </p>
+            </div>
+            <div class="column">
+              <p class="Karla">
+                <a
+                  class="footer-link"
+                  href="https://www.instagram.com/ajlunited/"
+                  target="_blank"
+                  >Instagram</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <p class="Oswald is-uppercase">Help Fight Bias</p>
+          <p class="Karla">It takes all of us to make change.</p>
+          <br />
+          <a
+            href="https://www.ajl.org/"
+            target="_blank"
+            class="red-button button Oswald is-uppercase"
+          >
+            Fight Bias
+          </a>
+        </div>
+      </div>
+      <div>
+        <hr />
+        <p class="has-text-right">
+          © 2023 Developed by
+          <b
+            ><a class="unstyled-link" href="https://bocoup.com/" target="_blank"
+              >Bocoup</a
+            ></b
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
